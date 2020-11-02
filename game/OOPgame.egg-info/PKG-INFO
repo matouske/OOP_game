@@ -1,0 +1,11 @@
+Metadata-Version: 1.1
+Name: OOPgame
+Version: 1.0.0
+Summary: My adventure-like game in object-oriented style based on Cluedo board game.
+Home-page: UNKNOWN
+Author: Eva
+Author-email: UNKNOWN
+License: UNKNOWN
+Description: UNKNOWN
+Platform: UNKNOWN
+Requires: random

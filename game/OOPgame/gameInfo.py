@@ -5,7 +5,7 @@ from random import randint, shuffle
 
 class GameInfo():
     """
-    The GameInfo class contains methods to create objects in the game, show help and others.
+    The GameInfo class contains methods to create objects in the game, show hepl and others.
     Stores name of author.
     """
     author = "Anonymous"
@@ -23,7 +23,7 @@ class GameInfo():
             players (int): The number of players in the game including you.
         """
         self.title = game_title
-        GameInfo.author = author
+        self.author = author
         self._secret = {"room" : None, "item": None, "guest": None}
         self._players = 0
 
