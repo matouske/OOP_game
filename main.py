@@ -1,7 +1,6 @@
-from room import Room
-from item import Item
-from character import Guest, Player, Police
+from character import Guest, Police
 from gameInfo import GameInfo
+from random import randint
 
 game = GameInfo("Solve a murder mystery!", "Eva")
 game.welcome()
@@ -23,7 +22,7 @@ if run:
     # set up rooms
     current_room = game.create_rooms()
 
-    #set up items
+    # set up items
     game.create_items()
 
     # add characters - guests and policemen
@@ -45,7 +44,6 @@ if run:
         run = False
 
 
-
 inventory = {"items": [], "guests": [], "rooms": []}
 text = ''
 item = False
@@ -53,7 +51,7 @@ character = False
 directions = ["north", "south", "east", "west", "south-west", "south-east", "north-west", "north-east"]
 exploring = True
 
-def block_content(name, with_command, form = "\t"):
+def block_content(name, with_command, form="\t"):
     text = ''
     if with_command:
         for i in inventory[name]:
@@ -67,7 +65,7 @@ def block_content(name, with_command, form = "\t"):
 while run:
     print("\n")
     current_room.describe()
-    print(text, end = '')
+    print(text, end='')
     text = ''
     command = input("> ").lower()
 
@@ -79,7 +77,7 @@ while run:
         item = False
         character = False
 
-    elif command == "explore": #what is in the current room
+    elif command == "explore": # what is in the current room
         current_room.full_describe = True
         item, character = current_room.get_content()
         if character:
@@ -132,15 +130,15 @@ while run:
         w = 0
         if inventory["rooms"]:
             text += "\tRooms:\n"
-            text += block_content("rooms", False,"\t\t")
+            text += block_content("rooms", False, "\t\t")
             w += 1
         if inventory["guests"]:
             text += "\tGuests:\n"
-            text += block_content("guests", False,"\t\t")
+            text += block_content("guests", False, "\t\t")
             w += 1
         if inventory["items"]:
             text += "\tItems:\n"
-            text += block_content("items", False,"\t\t")
+            text += block_content("items", False, "\t\t")
             w += 1
         if w == 0:
             text += "\tnothing\n"
@@ -150,7 +148,7 @@ while run:
             text += "You need to explore more.\n"
         else:
             print("\tYour notes:")
-            print(block_content("rooms", True,"\t\t"))
+            print(block_content("rooms", True, "\t\t"))
             thing = True
             while thing:
                 t = int(input("\tWrite a number (from the table): "))
@@ -165,7 +163,7 @@ while run:
             text += "You need to explore more.\n"
         else:
             print("\tYour notes:")
-            print(block_content("guests", True,"\t\t"))
+            print(block_content("guests", True, "\t\t"))
             thing = True
             while thing:
                 t = int(input("\tWrite a number (from the table): "))
@@ -180,7 +178,7 @@ while run:
             text += "You need to explore more.\n"
         else:
             print("\tYour notes:")
-            print(block_content("items", True,"\t\t"))
+            print(block_content("items", True, "\t\t"))
             thing = True
             while thing:
                 t = int(input("\tWrite a number (from the table): "))
@@ -195,7 +193,7 @@ while run:
             text += "You need to explore more before you can compare your thoughts.\n"
         else:
             print("\tGuests:")
-            print(block_content("guests", True,"\t\t"))
+            print(block_content("guests", True, "\t\t"))
             guest = True
             while guest:
                 g = int(input("\tSelect guest (write a number from the table): "))
@@ -204,7 +202,7 @@ while run:
                 else:
                     guest = False
             print("\n\tItems:")
-            print(block_content("items", True,"\t\t"))
+            print(block_content("items", True, "\t\t"))
             thing = True
             while thing:
                 t = int(input("\tSelect item (write a number from the table): "))
@@ -219,7 +217,7 @@ while run:
             text += "You need to explore more before you can make an accusion.\n"
         else:
             print("\tRooms:")
-            print(block_content("rooms", True,"\t\t"))
+            print(block_content("rooms", True, "\t\t"))
             room = True
             while room:
                 r = int(input("\tSelect room (write a number from the table): "))
@@ -228,7 +226,7 @@ while run:
                 else:
                     room = False
             print("\n\tGuests:")
-            print(block_content("guests", True,"\t\t"))
+            print(block_content("guests", True, "\t\t"))
             guest = True
             while guest:
                 g = int(input("\tSelect guest (write a number from the table): "))
@@ -237,7 +235,7 @@ while run:
                 else:
                     guest = False
             print("\n\tItems:")
-            print(block_content("items", True,"\t\t"))
+            print(block_content("items", True, "\t\t"))
             thing = True
             while thing:
                 t = int(input("\tSelect item (write a number from the table): "))
@@ -245,7 +243,7 @@ while run:
                     print("\t\t" + str(t) + " is not valid.")
                 else:
                     thing = False
-            game.accuse(inventory["rooms"][r], inventory["guests"][g],inventory["items"][t])
+            game.accuse(inventory["rooms"][r], inventory["guests"][g], inventory["items"][t])
             run = False
 
     elif command == "help":

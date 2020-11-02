@@ -13,7 +13,7 @@ class Room():
 
         Other values:
             description (string): The description of the room.
-            full_describe (boolean): The value indication wherter the room was explored.
+            full_describe (boolean): The value indicates whether the room was explored.
             linked_rooms (dict): The dictionary containing all adjacent rooms, the key indicates the direction of the door.
             character (Character/Guest/Police): The character standing in the room.
             item (Item): The item which is in the room.
@@ -33,6 +33,7 @@ class Room():
 
     @property
     def name(self):
+        """Gets or sets the name of the room."""
         return self._name
     @name.setter
     def name(self, room_name):
@@ -40,6 +41,7 @@ class Room():
 
     @property
     def description(self):
+        """Gets or sets the description of the room."""
         return self._description
     @description.setter
     def description(self, room_description):
@@ -47,6 +49,7 @@ class Room():
 
     @property
     def full_describe(self):
+        """Gets or sets the value indicating a room exploration."""
         return self._full_describe
     @full_describe.setter
     def full_describe(self, describe):
@@ -65,6 +68,7 @@ class Room():
 
     @property
     def character(self):
+        """Gets or sets the character (Guest/Policeman) in the room."""
         return self._character
     @character.setter
     def character(self, new_character):
@@ -72,6 +76,7 @@ class Room():
 
     @property
     def item(self):
+        """Gets or sets the item in the room."""
         return self._item
     @item.setter
     def item(self, new_item):
@@ -79,6 +84,7 @@ class Room():
 
     @property
     def note(self):
+        """Gets or sets the note to the room."""
         return self._note
     @note.setter
     def note(self, note):
@@ -86,6 +92,7 @@ class Room():
 
     @property
     def command(self):
+        """Gets or sets the command to the room."""
         return self._command
     @command.setter
     def command(self, command):
@@ -141,7 +148,7 @@ class Room():
 
     def get_more_details(self):
         """
-        Prints other "things" in the room - item of character.
+        Prints items and characters in the room.
         """
         item = False
         if self.item:

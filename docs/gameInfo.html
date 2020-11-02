@@ -1,0 +1,111 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html><head><title>Python: module gameInfo</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+</head><body bgcolor="#f0f0f8">
+
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="heading">
+<tr bgcolor="#7799ee">
+<td valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial">&nbsp;<br><big><big><strong>gameInfo</strong></big></big></font></td
+><td align=right valign=bottom
+><font color="#ffffff" face="helvetica, arial"><a href="../game_docs.html">BACK</a></font></td></tr></table>
+    <p></p>
+<p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ee77aa">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Classes</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#ee77aa"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><dl>
+<dt><font face="helvetica, arial"><a href="builtins.html#object">builtins.object</a>
+</font></dt><dd>
+<dl>
+<dt><font face="helvetica, arial"><a href="gameInfo.html#GameInfo">GameInfo</a>
+</font></dt></dl>
+</dd>
+</dl>
+ <p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ffc8d8">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#000000" face="helvetica, arial"><a name="GameInfo">class <strong>GameInfo</strong></a>(<a href="builtins.html#object">builtins.object</a>)</font></td></tr>
+    
+<tr bgcolor="#ffc8d8"><td rowspan=2><tt>&nbsp;&nbsp;&nbsp;</tt></td>
+<td colspan=2><tt>The&nbsp;<a href="#GameInfo">GameInfo</a>&nbsp;class&nbsp;contains&nbsp;methods&nbsp;to&nbsp;create&nbsp;objects&nbsp;in&nbsp;the&nbsp;game,&nbsp;show&nbsp;hepl&nbsp;and&nbsp;others.<br>
+Stores&nbsp;name&nbsp;of&nbsp;author.<br>&nbsp;</tt></td></tr>
+<tr><td>&nbsp;</td>
+<td width="100%">Methods defined here:<br>
+<dl><dt><a name="GameInfo-__init__"><strong>__init__</strong></a>(self, game_title, author)</dt><dd><tt>Creates&nbsp;a&nbsp;<a href="#GameInfo">GameInfo</a>&nbsp;<a href="builtins.html#object">object</a>&nbsp;which&nbsp;is&nbsp;necessary&nbsp;for&nbsp;the&nbsp;game.<br>
+&nbsp;<br>
+Args:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;game_title&nbsp;(string):&nbsp;The&nbsp;name&nbsp;of&nbsp;the&nbsp;game.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;author&nbsp;(string):&nbsp;The&nbsp;name&nbsp;of&nbsp;the&nbsp;author&nbsp;of&nbsp;this&nbsp;game.<br>
+&nbsp;<br>
+Other&nbsp;values:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;secter&nbsp;(dictionary):&nbsp;The&nbsp;real&nbsp;murder&nbsp;room,&nbsp;weapon&nbsp;and&nbsp;killer&nbsp;(you&nbsp;have&nbsp;to&nbsp;reveal&nbsp;them).<br>
+&nbsp;&nbsp;&nbsp;&nbsp;players&nbsp;(int):&nbsp;The&nbsp;number&nbsp;of&nbsp;players&nbsp;in&nbsp;the&nbsp;game&nbsp;including&nbsp;you.</tt></dd></dl>
+
+<dl><dt><a name="GameInfo-accuse"><strong>accuse</strong></a>(self, room, guest, item)</dt><dd><tt>Compares&nbsp;your&nbsp;accusion&nbsp;with&nbsp;real&nbsp;murder&nbsp;room,&nbsp;weapon&nbsp;and&nbsp;killer.<br>
+Returns&nbsp;a&nbsp;boolean&nbsp;value&nbsp;indicating&nbsp;success&nbsp;or&nbsp;failure.<br>
+&nbsp;<br>
+Args:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;room&nbsp;(Room):&nbsp;The&nbsp;room&nbsp;where&nbsp;the&nbsp;murder&nbsp;happened.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;guest&nbsp;(Guest):&nbsp;The&nbsp;guest&nbsp;who&nbsp;is&nbsp;the&nbsp;killer.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;item&nbsp;(Item):&nbsp;The&nbsp;item&nbsp;which&nbsp;is&nbsp;the&nbsp;murder&nbsp;weapon.</tt></dd></dl>
+
+<dl><dt><a name="GameInfo-compare"><strong>compare</strong></a>(self, room, guest, item)</dt><dd><tt>Compares&nbsp;your&nbsp;suggestion&nbsp;with&nbsp;information&nbsp;(cards)&nbsp;which&nbsp;have&nbsp;other&nbsp;players.<br>
+Returns&nbsp;a&nbsp;text&nbsp;to&nbsp;be&nbsp;displayed.<br>
+&nbsp;<br>
+Args:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;room&nbsp;(Room):&nbsp;The&nbsp;suggested&nbsp;room.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;guest&nbsp;(Guest):&nbsp;The&nbsp;suggested&nbsp;guest.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;item&nbsp;(Item):&nbsp;The&nbsp;suggested&nbsp;murder&nbsp;weapon.</tt></dd></dl>
+
+<dl><dt><a name="GameInfo-create_chars"><strong>create_chars</strong></a>(self)</dt><dd><tt>Creates&nbsp;six&nbsp;guests&nbsp;and&nbsp;three&nbsp;policemen.</tt></dd></dl>
+
+<dl><dt><a name="GameInfo-create_items"><strong>create_items</strong></a>(self)</dt><dd><tt>Creates&nbsp;six&nbsp;items&nbsp;(murder&nbsp;weapons).</tt></dd></dl>
+
+<dl><dt><a name="GameInfo-create_rooms"><strong>create_rooms</strong></a>(self)</dt><dd><tt>Creates&nbsp;nine&nbsp;rooms&nbsp;in&nbsp;the&nbsp;game&nbsp;and&nbsp;links&nbsp;them.</tt></dd></dl>
+
+<dl><dt><a name="GameInfo-divide_cards"><strong>divide_cards</strong></a>(self)</dt><dd><tt>Divides&nbsp;cards&nbsp;(Room,&nbsp;Item&nbsp;and&nbsp;Guest):<br>
+&nbsp;&nbsp;&nbsp;&nbsp;1.&nbsp;Selects&nbsp;room,&nbsp;murder&nbsp;weapon&nbsp;and&nbsp;killer.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;2.&nbsp;Shuffle&nbsp;remaining&nbsp;cards.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;3.&nbsp;Splits&nbsp;some&nbsp;cards&nbsp;between&nbsp;Policemen.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;4.&nbsp;Creates&nbsp;Players&nbsp;and&nbsp;splits&nbsp;remaining&nbsp;cards&nbsp;between&nbsp;them.</tt></dd></dl>
+
+<dl><dt><a name="GameInfo-goal"><strong>goal</strong></a>(self)</dt><dd><tt>Informs&nbsp;you&nbsp;what&nbsp;is&nbsp;a&nbsp;goal&nbsp;of&nbsp;the&nbsp;game.</tt></dd></dl>
+
+<dl><dt><a name="GameInfo-place_item_chars"><strong>place_item_chars</strong></a>(self)</dt><dd><tt>Place&nbsp;items,&nbsp;guests&nbsp;and&nbsp;policemen&nbsp;into&nbsp;a&nbsp;room.</tt></dd></dl>
+
+<dl><dt><a name="GameInfo-welcome"><strong>welcome</strong></a>(self)</dt><dd><tt>Prints&nbsp;text&nbsp;which&nbsp;welcomes&nbsp;you&nbsp;to&nbsp;the&nbsp;game.</tt></dd></dl>
+
+<hr>
+Class methods defined here:<br>
+<dl><dt><a name="GameInfo-credits"><strong>credits</strong></a>()<font color="#909090"><font face="helvetica, arial"> from <a href="builtins.html#type">builtins.type</a></font></font></dt><dd><tt>Prints&nbsp;credits.</tt></dd></dl>
+
+<hr>
+Static methods defined here:<br>
+<dl><dt><a name="GameInfo-help"><strong>help</strong></a>()</dt><dd><tt>Returns&nbsp;a&nbsp;text&nbsp;containing&nbsp;a&nbsp;list&nbsp;of&nbsp;commands&nbsp;to&nbsp;be&nbsp;displayed.</tt></dd></dl>
+
+<dl><dt><a name="GameInfo-info"><strong>info</strong></a>()</dt><dd><tt>Prints&nbsp;information&nbsp;about&nbsp;creator.</tt></dd></dl>
+
+<dl><dt><a name="GameInfo-map"><strong>map</strong></a>()</dt><dd><tt>Returns&nbsp;a&nbsp;text&nbsp;containing&nbsp;a&nbsp;map&nbsp;of&nbsp;linked&nbsp;rooms&nbsp;to&nbsp;be&nbsp;displayed.</tt></dd></dl>
+
+<hr>
+Data descriptors defined here:<br>
+<dl><dt><strong>__dict__</strong></dt>
+<dd><tt>dictionary&nbsp;for&nbsp;instance&nbsp;variables&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+<dl><dt><strong>__weakref__</strong></dt>
+<dd><tt>list&nbsp;of&nbsp;weak&nbsp;references&nbsp;to&nbsp;the&nbsp;object&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+<dl><dt><strong>players</strong></dt>
+<dd><tt>Gets&nbsp;or&nbsp;sets&nbsp;the&nbsp;number&nbsp;of&nbsp;players&nbsp;in&nbsp;the&nbsp;game.</tt></dd>
+</dl>
+<hr>
+Data and other attributes defined here:<br>
+<dl><dt><strong>author</strong> = 'Anonymous'</dl>
+
+</td></tr></table></td></tr></table>
+</body></html>

@@ -29,6 +29,7 @@ class GameInfo():
 
     @property
     def players(self):
+        """Gets or sets the number of players in the game."""
         return self._players
     @players.setter
     def players(self, value):

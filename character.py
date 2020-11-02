@@ -19,6 +19,7 @@ class Character():
 
     @property
     def name(self):
+        """Gets or sets the name of the character."""
         return self._name
     @property
     def description(self):
@@ -70,6 +71,7 @@ class Guest(Character):
 
     @property
     def note(self):
+        """Gets or sets the note to the guest."""
         return self._note
     @note.setter
     def note(self, note):
@@ -77,6 +79,7 @@ class Guest(Character):
 
     @property
     def command(self):
+        """Gets or sets the command to the guest."""
         return self._command
     @command.setter
     def command(self, command):
@@ -110,7 +113,7 @@ class Player(Character):
         Adds object to the list.
 
         Args:
-            card (Room/Guest/Item): The object .
+            card (Room/Guest/Item): The object to be added.
         """
         self.cards.append(card)
 
@@ -147,7 +150,7 @@ class Police(Character):
         Adds object to the list.
 
         Args:
-            card (Room/Guest/Item): The object .
+            card (Room/Guest/Item): The object to be added.
         """
         self.cards.append(card)
 

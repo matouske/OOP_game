@@ -25,6 +25,7 @@ class Item():
 
     @property
     def name(self):
+        """Gets or sets the name of the item."""
         return self._name
     @name.setter
     def name(self, item_name):
@@ -32,6 +33,7 @@ class Item():
 
     @property
     def description(self):
+        """Gets or sets the description of the item."""
         return self._description
     @description.setter
     def description(self, item_description):
@@ -39,6 +41,7 @@ class Item():
 
     @property
     def note(self):
+        """Gets or sets the note tothe item."""
         return self._note
     @note.setter
     def note(self, note):
@@ -46,6 +49,7 @@ class Item():
 
     @property
     def command(self):
+        """Gets or sets the command to the item."""
         return self._command
     @command.setter
     def command(self, command):
@@ -53,6 +57,7 @@ class Item():
 
     def describe(self):
         """
-        Prints the name of item and "is lying here".
+        Prints the name and description of the item.
         """
         print("The "+self._name + ' is lying here.')
+        print("\t"+self.description)
